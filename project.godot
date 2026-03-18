@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Flappy Birds"
+config/name="Flappy Bird"
 run/main_scene="uid://bfwqubdigy6gn"
 config/features=PackedStringArray("4.6", "Forward Plus")
 

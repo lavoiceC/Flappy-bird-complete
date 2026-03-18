@@ -38,3 +38,5 @@ func _process(delta: float) -> void:
 # 1. Click project 
 # 2. in general click on window 
 # 3. in viewpoint set it 600 to 800ls
+
+#

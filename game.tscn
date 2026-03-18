@@ -1,9 +1,31 @@
 [gd_scene format=3 uid="uid://bfwqubdigy6gn"]
 
 [ext_resource type="PackedScene" uid="uid://seihbewpio1r" path="res://player.tscn" id="1_80nbo"]
+[ext_resource type="Script" uid="uid://b0j7okpckx1xe" path="res://game.gd" id="1_feb5d"]
+[ext_resource type="Texture2D" uid="uid://do3ror007xpfj" path="res://Background3.png" id="2_fc0e3"]
+[ext_resource type="PackedScene" uid="uid://dr457tjbg5ov0" path="res://pipes.tscn" id="4_fc0e3"]
 
 [node name="Game" type="Node2D" unique_id=1731982360]
+script = ExtResource("1_feb5d")
+
+[node name="BG1" type="Sprite2D" parent="." unique_id=1392763523]
+scale = Vector2(2.3671875, 3.0781252)
+texture = ExtResource("2_fc0e3")
+centered = false
+
+[node name="BG2" type="Sprite2D" parent="." unique_id=1915817924]
+position = Vector2(3.000061, -5.0000305)
+scale = Vector2(2.3475626, 3.117)
+texture = ExtResource("2_fc0e3")
+centered = false
 
 [node name="Player" parent="." unique_id=926534712 instance=ExtResource("1_80nbo")]
-position = Vector2(277.27313, 374.21277)
+position = Vector2(232.00002, -475.00003)
 rotation = -0.09599311
+
+[node name="Pipes" parent="." unique_id=1032967553 instance=ExtResource("4_fc0e3")]
+position = Vector2(169, -135)
+
+[node name="Timer" type="Timer" parent="." unique_id=1209051757]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
