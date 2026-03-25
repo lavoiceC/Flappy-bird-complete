@@ -13,7 +13,7 @@ size = Vector2(169.5, 381.75)
 script = ExtResource("1_og227")
 
 [node name="UpperPipe" type="Area2D" parent="." unique_id=1301612171]
-position = Vector2(8, 102)
+position = Vector2(4, 4)
 scale = Vector2(6, 10)
 metadata/_edit_group_ = true
 
@@ -26,17 +26,17 @@ frame = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UpperPipe" unique_id=520290216]
 shape = SubResource("RectangleShape2D_og227")
 
-[node name="LowerPipes" type="Area2D" parent="." unique_id=1187924348]
+[node name="LowerPipe" type="Area2D" parent="." unique_id=1187924348]
 position = Vector2(-97, 132)
 metadata/_edit_group_ = true
 
-[node name="Sprite2D" type="Sprite2D" parent="LowerPipes" unique_id=1006844251]
+[node name="Sprite2D" type="Sprite2D" parent="LowerPipe" unique_id=1006844251]
 position = Vector2(99, 595)
 scale = Vector2(6, 10)
 texture = ExtResource("1_r1kwc")
 hframes = 4
 vframes = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LowerPipes" unique_id=1443050424]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LowerPipe" unique_id=1443050424]
 position = Vector2(95, 602)
 shape = SubResource("RectangleShape2D_l4tgv")

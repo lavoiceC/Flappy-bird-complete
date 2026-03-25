@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://b4h8yhgwpfwfb"]
+
+[ext_resource type="PackedScene" uid="uid://d2iaypi6r7iyb" path="res://menu.tscn" id="1_i1ka3"]
+[ext_resource type="Script" uid="uid://bes1an1hb5vwi" path="res://system.gd" id="1_m3jav"]
+
+[node name="System" type="Node2D" unique_id=1303515584]
+script = ExtResource("1_m3jav")
+
+[node name="Menu" parent="." unique_id=145295355 instance=ExtResource("1_i1ka3")]
+
+[connection signal="quit_game" from="Menu" to="." method="_on_menu_quit_game"]
+[connection signal="start_game" from="Menu" to="." method="_on_menu_start_game"]

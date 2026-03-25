@@ -3,18 +3,68 @@
 [ext_resource type="Texture2D" uid="uid://c4nglpr4hljc8" path="res://AllBird1.png" id="2_hqtel"]
 [ext_resource type="Script" uid="uid://b8vw5oxs71hh0" path="res://player.gd" id="3_sweqy"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_onrkg"]
+atlas = ExtResource("2_hqtel")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3pqv"]
+atlas = ExtResource("2_hqtel")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hqtel"]
+atlas = ExtResource("2_hqtel")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sweqy"]
+atlas = ExtResource("2_hqtel")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2hs0m"]
+atlas = ExtResource("2_hqtel")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1jxqw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_onrkg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3pqv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hqtel")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sweqy")
+}],
+"loop": true,
+"name": &"bird_movement",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2hs0m")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_2hs0m"]
 radius = 6.0827627
 
 [node name="Player" type="Area2D" unique_id=926534712]
+scale = Vector2(3, 3)
 script = ExtResource("3_sweqy")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=560076127]
-position = Vector2(0, 1)
-texture = ExtResource("2_hqtel")
-hframes = 4
-vframes = 7
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1732855901]
+sprite_frames = SubResource("SpriteFrames_1jxqw")
+animation = &"bird_movement"
+frame_progress = 0.99775046
 
 [node name="CollisionShape" type="CollisionShape2D" parent="." unique_id=1333879558]
 position = Vector2(0, 2)
 shape = SubResource("CircleShape2D_2hs0m")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

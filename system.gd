@@ -1,8 +1,8 @@
 extends Node2D
-var scroll_speed:float = 3.0
-var has_scored:bool = false
-signal get_point
-# Move the scene in it entirely 
+
+@onready var game = preload("res://game.tscn")
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -10,11 +10,15 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	position.x -= scroll_speed
-	if position.x <= 100 and has_scored == false:
-		emit_signal("get_point")
-		has_scored = true
-		
-		
+	pass
+	
+func _on_menu_quit_game() -> void:
+	get_tree().quit()
 
-		
+
+
+
+func _on_menu_start_game() -> void:
+	var new_game = game.instantiate()
+	add_child(new_game)
+	remove_child($Menu)

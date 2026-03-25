@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="Flappy Bird"
-run/main_scene="uid://bfwqubdigy6gn"
+config/name="Flappy Bird Complete Main"
+run/main_scene="uid://b4h8yhgwpfwfb"
 config/features=PackedStringArray("4.6", "Forward Plus")
 
 [display]
